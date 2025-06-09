@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎤 Conversational Voice Agent</title>
+  <link rel="stylesheet" href="static/style.css" />
+  <script defer src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script defer src="static/app.js"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎤 Conversational Voice Agent</h1>
+      <p class="subtitle">Click & speak to chat in real time</p>
+    </header>
+
+    <main>
+      <section class="mic-wrapper">
+        <div class="mic-visual" id="micVisual" aria-hidden="true"></div>
+        <button id="recordBtn" class="btn-record" aria-pressed="false">
+          <span id="btnIcon">🎙️</span>
+          <span id="btnLabel">Start Recording</span>
+        </button>
+      </section>
+
+      <p id="status" class="status-text">Click “Start Recording” to speak</p>
+      <div id="loadingSpinner" class="spinner" hidden></div>
+
+      <section class="output-block">
+        <h2>Transcription</h2>
+        <pre id="transcription" class="output-area" aria-live="polite"></pre>
+      </section>
+
+      <section class="output-block">
+        <h2>Response</h2>
+        <pre id="response" class="output-area" aria-live="polite"></pre>
+      </section>
+
+      <section class="output-block" id="audioSection" hidden>
+        <h2>Audio Reply</h2>
+        <audio id="audioReply" controls></audio>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
